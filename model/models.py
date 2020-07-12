@@ -16,10 +16,10 @@ from torch.autograd import Variable
 import math
 from functools import partial
 from i3res import I3ResNet,I3ResNet_18_34
-from conv4d import Conv4d
+from conv4d import Conv4d # ~ ie bring in the Conv4d class defined elsewhere in this repo.
 
 
-class TSN(nn.Module):
+class TSN(nn.Module): # ~ used in the paper as a benchmark
     def __init__(self, num_class, num_segments, modality,test_mode=False,slow_testing=0,fast_implementation=1,
                  base_model='resnet101', new_length=None,
                  consensus_type='avg', apply_softmax=False,gtsn=False,
